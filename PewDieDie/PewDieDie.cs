@@ -29,7 +29,7 @@ namespace PewDieDie
         public static SpriteBatch spriteBatch;
         public static List<Texture2D> textures = new List<Texture2D>();
 
-        public SoundEffect bgm;
+        public Song bgm;
 
         private Pewds pewdie;
 
@@ -60,7 +60,7 @@ namespace PewDieDie
 
         private void PlayBGM()
         {
-            bgm = Content.Load<SoundEffect>("bgm");
+            bgm = Content.Load<Song>("bgm");
             bgm.Play();
         }
 

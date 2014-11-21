@@ -24,4 +24,3 @@ c:\users\ieuser\documents\visual studio 2013\Projects\PewDieDie\PewDieDie\bin\Wi
 c:\users\ieuser\documents\visual studio 2013\Projects\PewDieDie\PewDieDie\bin\Windows\Debug\SharpDX.Direct3D9.xml
 c:\users\ieuser\documents\visual studio 2013\Projects\PewDieDie\PewDieDie\obj\x86\Debug\PewDieDie.exe
 c:\users\ieuser\documents\visual studio 2013\Projects\PewDieDie\PewDieDie\obj\x86\Debug\PewDieDie.pdb
-c:\users\ieuser\documents\visual studio 2013\Projects\PewDieDie\PewDieDie\bin\Windows\Debug\Content\bgm.wma
