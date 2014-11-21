@@ -17,7 +17,7 @@ namespace PewDieDie
     public class Game1 : Game
     {
         GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        public static SpriteBatch spriteBatch;
 
         public Game1()
             : base()
