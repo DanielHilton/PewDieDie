@@ -9,25 +9,18 @@ namespace PewDieDie
 {
     class Sprite : ISprite
     {
-        private Texture2D spriteTex;
-        public Texture2D SpriteTex
+        private Texture2D texture;
+        public Texture2D Texture
         {
-            get { return spriteTex; }
-            set { spriteTex = value; }
+            get { return texture; }
+            set { texture = value; }
         }
         
-        private Rectangle spriteRect;
-        public Rectangle SpriteRect
+        private Rectangle rectangle;
+        public Rectangle Rectangle
         {
-            get { return spriteRect; }
-            set { spriteRect = value; }
-        }
-
-        private Vector2i position;
-        public Vector2i Position
-        {
-            get { return position; }
-            set { position = value; }
+            get { return rectangle; }
+            set { rectangle = value; }
         }
 
         private float rotation;
@@ -37,33 +30,55 @@ namespace PewDieDie
             set { rotation = value; }
         }
 
+        private Vector2 origin;
+        public Vector2 Origin
+        {
+            get { return origin; }
+            set { origin = value; }
+        }
+
         public Sprite() //default
         {
-            this.spriteTex = null;
-            this.spriteRect = new Rectangle();
-            this.position = new Vector2i();
+            this.texture = null;
+            this.rectangle = new Rectangle();
             this.rotation = 0.0f;
         }
         public Sprite(Texture2D pTex, Vector2i pSize, Vector2i pPos) //Initialised, no rotation
         {
-            this.spriteTex = pTex;
-            this.position = pPos;
-            this.spriteRect = new Rectangle(this.Position.X, this.Position.Y, pSize.X, pSize.Y);
+            this.texture = pTex;
+            this.rectangle = new Rectangle(pPos.X, pPos.Y, pSize.X, pSize.Y);
             this.rotation = 0.0f;
+            this.origin = new Vector2(this.rectangle.X + this.rectangle.Width / 2, this.rectangle.Y + this.rectangle.Height / 2);
         }
         public Sprite(Texture2D pTex, Vector2i pSize, Vector2i pPos, float pRot) //Initialised + rotation
         {
-            this.spriteTex = pTex;
-            this.position = pPos;
-            this.spriteRect = new Rectangle(this.Position.X, this.Position.Y, pSize.X, pSize.Y);
+            this.texture = pTex;
+            this.rectangle = new Rectangle(pPos.X, pPos.Y, pSize.X, pSize.Y);
             this.rotation = pRot;
+            this.origin = new Vector2(this.rectangle.X + this.rectangle.Width / 2, this.rectangle.Y + this.rectangle.Height / 2);
+        }
+
+        protected void Move(Direction pDir, int pSpeed)
+        {
+            switch (pDir)
+            {
+                case(Direction.Up):
+                    this.rectangle.Y -= pSpeed;
+                    break;
+                case(Direction.Down):
+                    this.rectangle.Y += pSpeed;
+                    break;
+                case(Direction.Right):
+                    this.rectangle.X += pSpeed;
+                    break;
+                case(Direction.Left):
+                    this.rectangle.X -= pSpeed;
+                    break;
+            }
         }
 
         public void Update(GameTime gameTime)
         {
-            //Update position of rectangle from position vector
-            this.spriteRect.X = this.position.X;
-            this.spriteRect.Y = this.position.Y;
         }
 
         public void Initialise()
@@ -73,14 +88,13 @@ namespace PewDieDie
 
         public void Draw(GameTime gameTime)
         {
-            Game1.spriteBatch.Draw(this.spriteTex, this.spriteRect, null, Color.White, this.rotation,
-                new Vector2(this.position.X + this.spriteRect.Width / 2,
-                    this.position.Y + this.spriteRect.Height / 2),SpriteEffects.None, 0.0f);
+            //PewDieDie.spriteBatch.Draw(PewDieDie.textures[0], this.position, Color.White);
+            PewDieDie.spriteBatch.Draw(PewDieDie.textures[0], this.rectangle, null, Color.White, this.rotation, this.origin, SpriteEffects.None, 0.0f);
         }
 
         public void Destroy()
         {
-            this.spriteTex.Dispose();
+            this.texture.Dispose();
         }
     }
 }

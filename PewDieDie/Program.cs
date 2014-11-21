@@ -18,7 +18,7 @@ namespace PewDieDie
         [STAThread]
         static void Main()
         {
-            using (var game = new Game1())
+            using (var game = new PewDieDie())
                 game.Run();
         }
     }

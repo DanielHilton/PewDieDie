@@ -8,9 +8,9 @@ namespace PewDieDie
 {
     interface ISprite
     {
-        public void Initialise(); //Initialise Sprite
-        public void Update(GameTime gameTime); //Update position, health, whatever
-        public void Draw(GameTime gameTime); //Actually draw it
-        public void Destroy(); //KILL
+        void Initialise(); //Initialise Sprite
+        void Update(GameTime gameTime); //Update position, health, whatever
+        void Draw(GameTime gameTime); //Actually draw it
+        void Destroy(); //KILL
     }
 }
