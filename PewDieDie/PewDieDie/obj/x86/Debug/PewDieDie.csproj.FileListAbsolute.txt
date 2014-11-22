@@ -1,0 +1,13 @@
+C:\Users\ProperBritish\Documents\Visual Studio 2010\Projects\PewDieDie\PewDieDie\PewDieDie\bin\x86\Debug\PewDieDie.exe
+C:\Users\ProperBritish\Documents\Visual Studio 2010\Projects\PewDieDie\PewDieDie\PewDieDie\bin\x86\Debug\PewDieDie.pdb
+C:\Users\ProperBritish\Documents\Visual Studio 2010\Projects\PewDieDie\PewDieDie\PewDieDie\obj\x86\Debug\PewDieDie.csprojResolveAssemblyReference.cache
+C:\Users\ProperBritish\Documents\Visual Studio 2010\Projects\PewDieDie\PewDieDie\PewDieDie\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\ProperBritish\Documents\Visual Studio 2010\Projects\PewDieDie\PewDieDie\PewDieDie\obj\x86\Debug\PewDieDie.exe
+C:\Users\ProperBritish\Documents\Visual Studio 2010\Projects\PewDieDie\PewDieDie\PewDieDie\obj\x86\Debug\PewDieDie.pdb
+C:\Users\ProperBritish\Documents\Visual Studio 2010\Projects\PewDieDie\PewDieDie\PewDieDie\bin\x86\Debug\Content\bgm.xnb
+C:\Users\ProperBritish\Documents\Visual Studio 2010\Projects\PewDieDie\PewDieDie\PewDieDie\bin\x86\Debug\Content\pewds.xnb
+C:\Users\ProperBritish\Documents\Visual Studio 2010\Projects\PewDieDie\PewDieDie\PewDieDie\bin\x86\Debug\Content\bgm.wma
+C:\Users\ProperBritish\Documents\Visual Studio 2010\Projects\PewDieDie\PewDieDie\PewDieDie\bin\x86\Debug\Content\hudFont.xnb
+C:\Users\ProperBritish\Documents\Visual Studio 2010\Projects\PewDieDie\PewDieDie\PewDieDie\bin\x86\Debug\Content\background.xnb
+C:\Users\ProperBritish\Documents\Visual Studio 2010\Projects\PewDieDie\PewDieDie\PewDieDie\bin\x86\Debug\Content\font.xnb
+C:\Users\ProperBritish\Documents\Visual Studio 2010\Projects\PewDieDie\PewDieDie\PewDieDie\bin\x86\Debug\Content\logo.xnb

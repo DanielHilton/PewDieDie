@@ -1,0 +1,7 @@
+Content\bgm.xnb
+Content\bgm.wma
+Content\pewds.xnb
+Content\hudFont.xnb
+Content\background.xnb
+Content\font.xnb
+Content\logo.xnb
