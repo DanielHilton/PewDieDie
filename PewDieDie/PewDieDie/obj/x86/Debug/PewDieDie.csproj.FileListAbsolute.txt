@@ -11,3 +11,7 @@ C:\Users\ProperBritish\Documents\Visual Studio 2010\Projects\PewDieDie\PewDieDie
 C:\Users\ProperBritish\Documents\Visual Studio 2010\Projects\PewDieDie\PewDieDie\PewDieDie\bin\x86\Debug\Content\background.xnb
 C:\Users\ProperBritish\Documents\Visual Studio 2010\Projects\PewDieDie\PewDieDie\PewDieDie\bin\x86\Debug\Content\font.xnb
 C:\Users\ProperBritish\Documents\Visual Studio 2010\Projects\PewDieDie\PewDieDie\PewDieDie\bin\x86\Debug\Content\logo.xnb
+C:\Users\ProperBritish\Documents\Visual Studio 2010\Projects\PewDieDie\PewDieDie\PewDieDie\bin\x86\Debug\Content\star.xnb
+C:\Users\ProperBritish\Documents\Visual Studio 2010\Projects\PewDieDie\PewDieDie\PewDieDie\bin\x86\Debug\Content\playBtn.xnb
+C:\Users\ProperBritish\Documents\Visual Studio 2010\Projects\PewDieDie\PewDieDie\PewDieDie\bin\x86\Debug\Content\playBtnHover.xnb
+C:\Users\ProperBritish\Documents\Visual Studio 2010\Projects\PewDieDie\PewDieDie\PewDieDie\bin\x86\Debug\Content\intro.xnb

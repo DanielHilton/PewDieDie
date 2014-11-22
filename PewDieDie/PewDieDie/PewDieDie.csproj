@@ -108,11 +108,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Background.cs" />
+    <Compile Include="Button.cs" />
+    <Compile Include="Collections.cs" />
     <Compile Include="PewDieDie.cs" />
     <Compile Include="Pewds.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Sprite.cs" />
+    <Compile Include="Star.cs" />
     <Compile Include="Vector2i.cs" />
   </ItemGroup>
   <ItemGroup>

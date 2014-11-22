@@ -56,6 +56,42 @@
       <Output>C:\Users\ProperBritish\Documents\Visual Studio 2010\Projects\PewDieDie\PewDieDie\PewDieDie\bin\x86\Debug\Content\logo.xnb</Output>
       <Time>2014-11-22T13:03:12.208949+00:00</Time>
     </Item>
+    <Item>
+      <Source>star.png</Source>
+      <Name>star</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\ProperBritish\Documents\Visual Studio 2010\Projects\PewDieDie\PewDieDie\PewDieDie\bin\x86\Debug\Content\star.xnb</Output>
+      <Time>2014-11-22T15:37:08.4207321+00:00</Time>
+    </Item>
+    <Item>
+      <Source>playBtn.png</Source>
+      <Name>playBtn</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\ProperBritish\Documents\Visual Studio 2010\Projects\PewDieDie\PewDieDie\PewDieDie\bin\x86\Debug\Content\playBtn.xnb</Output>
+      <Time>2014-11-22T20:58:57.5045685+00:00</Time>
+    </Item>
+    <Item>
+      <Source>playBtnHover.png</Source>
+      <Name>playBtnHover</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\ProperBritish\Documents\Visual Studio 2010\Projects\PewDieDie\PewDieDie\PewDieDie\bin\x86\Debug\Content\playBtnHover.xnb</Output>
+      <Time>2014-11-22T20:58:27.2348372+00:00</Time>
+    </Item>
+    <Item>
+      <Source>intro.mp3</Source>
+      <Name>intro</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\ProperBritish\Documents\Visual Studio 2010\Projects\PewDieDie\PewDieDie\PewDieDie\bin\x86\Debug\Content\intro.xnb</Output>
+      <Time>2014-03-02T21:37:32+00:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

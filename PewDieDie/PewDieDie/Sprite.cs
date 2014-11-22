@@ -9,21 +9,21 @@ namespace PewDieDie
 {
     class Sprite
     {   
-        private Rectangle rectangle;
+        protected Rectangle rectangle;
         public Rectangle Rectangle
         {
             get { return rectangle; }
             set { rectangle = value; }
         }
 
-        private float rotation;
+        protected float rotation;
         public float Rotation
         {
             get { return rotation; }
             set { rotation = value; }
         }
 
-        private Vector2 origin;
+        protected Vector2 origin;
         public Vector2 Origin
         {
             get { return origin; }
@@ -69,10 +69,14 @@ namespace PewDieDie
             }
         }
 
+        protected void setPosition(Vector2i pVec)
+        {
+            this.rectangle.X = pVec.X;
+            this.rectangle.Y = pVec.Y;
+        }
+
         public void Draw(GameTime gameTime, Texture2D pTex)
         {
-            //PewDieDie.spriteBatch.Draw(PewDieDie.textures[0], this.position, Color.White);
-            //PewDieDie.spriteBatch.Draw(pTex, this.rectangle, null, Color.White, this.rotation, this.origin, SpriteEffects.None, 0.0f);
             PewDieDie.spriteBatch.Draw(pTex,this.rectangle, Color.White); 
         }
     }

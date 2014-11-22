@@ -13,36 +13,23 @@ using Microsoft.Xna.Framework.Media;
 
 namespace PewDieDie
 {
-    /// <summary>
-    /// This is the main type for your game
-    /// </summary>
-    /// 
-
-    public enum Direction
-    {
-        Up, Down, Left, Right
-    };
-
-    public class Textures
-    {
-        public const int PEWDIE = 0;
-        public const int BACKGROUND = 1;
-        public const int LOGO = 2;
-    };
 
     public class PewDieDie : Game
     {
         GraphicsDeviceManager graphics;
         public static SpriteBatch spriteBatch;
         public static List<Texture2D> textures = new List<Texture2D>();
-
+        public static GameState gameState = GameState.MAIN_MENU;
+        
         private SpriteFont hudFont;
 
         public Song bgm;
+        public List<SoundEffect> soundEffects = new List<SoundEffect>();
 
         private Pewds pewdie;
         private Background background;
         private Sprite logo;
+        private Button playBtn;
 
         public PewDieDie()
             : base()
@@ -54,77 +41,78 @@ namespace PewDieDie
             Content.RootDirectory = "Content";
         }
 
-        /// <summary>
-        /// Allows the game to perform any initialization it needs to before starting to run.
-        /// This is where it can query for any required services and load any non-graphic
-        /// related content.  Calling base.Initialize will enumerate through any components
-        /// and initialize them as well.
-        /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            base.Initialize();
+            this.IsMouseVisible = true;
 
-            loadTextures();
-            loadFonts();
+            LoadTextures();
+            LoadFonts();
 
             pewdie = new Pewds();
             background = new Background();
-            logo = new Sprite(new Vector2i(textures[Textures.LOGO].Width, textures[Textures.LOGO].Height), new Vector2i(185, 150));
+            playBtn = new Button(textures[Textures.PLAY_BTN], textures[Textures.PLAY_BTN_HOVER], new Vector2i(310, 425));
+            playBtn.onClick += new EventHandler(StartGame);
+            logo = new Sprite(new Vector2i(textures[Textures.LOGO].Width, textures[Textures.LOGO].Height), new Vector2i(185, 100));
 
-            base.Initialize();
+            LoadSounds();
 
-            PlayBGM();
-        }
-
-        private void loadFonts()
-        {
-            hudFont = Content.Load<SpriteFont>("font");
-        }
-
-        private void loadTextures()
-        {
-            textures.Add(Content.Load<Texture2D>("pewds"));
-            textures.Add(Content.Load<Texture2D>("background"));
-            textures.Add(Content.Load<Texture2D>("logo"));
-        }
-
-        private void PlayBGM()
-        {
-            bgm = Content.Load<Song>("bgm");
             MediaPlayer.Volume = 0.5f;
             MediaPlayer.Play(bgm);
         }
 
-        /// <summary>
-        /// LoadContent will be called once per game and is the place to load
-        /// all of your content.
-        /// </summary>
+        private void LoadFonts()
+        {
+            hudFont = Content.Load<SpriteFont>("font");
+        }
+        private void LoadTextures()
+        {
+            textures.Add(Content.Load<Texture2D>("pewds"));
+            textures.Add(Content.Load<Texture2D>("background"));
+            textures.Add(Content.Load<Texture2D>("logo"));
+            textures.Add(Content.Load<Texture2D>("star"));
+            textures.Add(Content.Load<Texture2D>("playBtn"));
+            textures.Add(Content.Load<Texture2D>("playBtnHover"));
+        }
+        private void LoadSounds()
+        {
+            bgm = Content.Load<Song>("bgm");
+            soundEffects.Add(Content.Load<SoundEffect>("intro"));
+        }
+
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            // TODO: use this.Content to load your game content here
         }
 
-        /// <summary>
-        /// UnloadContent will be called once per game and is the place to unload
-        /// all content.
-        /// </summary>
         protected override void UnloadContent()
         {
-            // TODO: Unload any non ContentManager content here
+            for (int i = 0; i < textures.Count; i++)
+                textures[i].Dispose();
+            for (int i = 0; i < soundEffects.Count; i++)
+                soundEffects[i].Dispose();
+            bgm.Dispose();
         }
 
-        /// <summary>
-        /// Allows the game to run logic such as updating the world,
-        /// checking for collisions, gathering input, and playing audio.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
             HandleKeyboardInput();
             base.Update(gameTime);
+            background.Update(gameTime);
+
+            switch (gameState)
+            {
+                case(GameState.MAIN_MENU):
+                    playBtn.Update(gameTime);
+                    break;
+                case(GameState.GAME):
+                    break;
+                case(GameState.PAUSE):
+                    break;
+                case(GameState.GAME_OVER):
+                    break;
+            }
         }
 
         private void HandleKeyboardInput()
@@ -151,24 +139,38 @@ namespace PewDieDie
             }
         }
 
-        /// <summary>
-        /// This is called when the game should draw itself.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            // TODO: Add your drawing code here
-
             spriteBatch.Begin();
             background.Draw(gameTime);
-            logo.Draw(gameTime, textures[Textures.LOGO]);
-            pewdie.Draw(gameTime);
-            spriteBatch.DrawString(hudFont, "Pewds loc: " + pewdie.Rectangle.X + ", " + pewdie.Rectangle.Y, new Vector2(20, 500), Color.White);
+            switch (gameState)
+            {
+                case(GameState.MAIN_MENU):
+                    DrawMainMenu(gameTime);
+                    break;
+                case(GameState.GAME):
+                    pewdie.Draw(gameTime);
+                    break;
+                case(GameState.PAUSE):
+                    break;
+                case(GameState.GAME_OVER):
+                    break;
+            }
             spriteBatch.End();
-
             base.Draw(gameTime);
+        }
+
+        private void DrawMainMenu(GameTime gameTime)
+        {
+            logo.Draw(gameTime, textures[Textures.LOGO]);
+            playBtn.Draw(gameTime);
+            spriteBatch.DrawString(hudFont, "Controls: UP/DOWN/LEFT/RIGHT - Move \n                 SPACE = Fire", new Vector2(80, 650), Color.White);
+        }
+
+        public void StartGame(object sender, EventArgs e)
+        {
+            gameState = GameState.GAME;
+            soundEffects[Sounds.INTRO].Play(0.8f, -0.5f, 0.0f);
         }
     }
 }
